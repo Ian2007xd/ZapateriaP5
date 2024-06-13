@@ -1,0 +1,229 @@
+/*EXTRAS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    ---color-gris: #18191A;
+    --color-transparen: transparent;
+    --color-body: #fff;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-black2: #fff;
+    --color-blue: #29caf8;
+    --color-text: #000;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-body);
+    font-family: "PT sans", sans-serif;
+    background-size: cover;
+    background-position: center;
+    transition: .5s ease;
+    /*background: linear-gradient(#0df8f9, #000);*/
+}
+body.dark {
+    ---color-gris: #18191A;
+    --color-transparen: #18191A;
+    --color-body: #000;
+    --color-white: #CCC;
+    --color-black: #18191A;
+    --color-black2: #000;
+    --color-blue: #29caf8;
+    --color-text: #ccc;
+    transition: .5s ease;
+}
+
+/*
+SERVICIOS
+*/
+.text-catalogos p {
+    display: flex;
+    margin: 60px auto 30px;
+    font-size: 1.5rem;
+    color: var(--color-text);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+.container {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px auto 10px;
+}
+.container .card {
+    height: 350px;
+    width: 300px;
+    margin: 30px 10px 30px;
+    transition: .5s ease;
+}
+.container .card .servicio {
+    height: 350px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    background-color: var(--color-blue);
+    transition: .5s ease;
+    position: absolute;
+}
+.container .card .servicio .img img {
+    width: 200px;
+    background-size: cover;
+    margin-bottom: 200px;
+    transition: .5s ease;
+    filter: drop-shadow(5px -4px 10px var(--color-black));
+    border: 3px solid var(--color-blue);
+    border-radius: 50%;
+}
+.container .servicio .detalle {
+    height: 200px;
+    width: 300px;
+    background-color: var(--color-black2);
+    border: 3px solid var(--color-blue);
+    position: absolute;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    margin-top: 150px;
+    z-index: 2;
+    /*display: grid;*/
+    grid-template-columns: 1fr 1rf 1rf;
+    transition: .5s ease;
+}
+.container .card:hover {
+    height: 400px;
+    width: 300px;
+    margin: -20px 10px -20px;
+    transition: .5s ease;
+}
+.container .card:hover .servicio {
+    background-image: radial-gradient(#fff, var(--clr));
+    transition: .5s ease;
+}
+.container .card .servicio .detalle h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 90%;
+    font-size: 18px;
+    margin: 10px auto;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    color: var(--color-text);
+}
+.container .card .servicio .detalle p {
+    margin: auto;
+    width: 90%;
+    font-size: 12px;
+    color: var(--color-text);
+}
+.container .card .servicio .detalle .btn a {
+    position: absolute;
+    top: 70%;
+    left: 33%;
+    margin: auto;
+    cursor: pointer;
+    background-color: var(--color-blue);
+    border-radius: 10px;
+    border: 3px solid var(--color-blue);
+    color: var(--color-black);
+    font-size: 20px;
+    padding: 0px 10px 0px 10px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto 10px;
+}
+
+
+/*
+PIE DE PAGINA
+*/
+.pie-pagina {
+    width: 100%;
+    background-color: var(--color-black);
+    transition: .5s ease;
+}
+.pie-pagina .grupo1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0;
+}
+.pie-pagina .grupo1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo1 .box figure img {
+    width: 100px;
+    border: 3px solid var(--color-white);
+    border-radius: 50%;
+    transition: .5s ease;
+}
+.pie-pagina .grupo1 .box h2 {
+    color: var(--color-white);
+    margin-bottom: 25px;
+    font-size: 20px;
+    transition: .5s ease;
+}
+.pie-pagina .grupo1 .box p {
+    color: var(--color-white);
+    margin-bottom: 10px;
+    transition: .5s ease;
+}
+.pie-pagina .grupo1 .box .red-social a {
+    text-decoration: none;
+}
+.pie-pagina .grupo1 .box .red-social i {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: var(--color-black);
+    margin-right: 10px;
+    background-color: var(--color-white);
+    text-align: center;
+    transition: .5s ease;
+}
+.pie-pagina .grupo1 .box .red-social i:hover {
+    background-color: var(--color-blue);
+    transition: .5s ease;
+}
+.pie-pagina .grupo-2 {
+    background-color: var(---color-gris);
+    padding: 15px 10px;
+    text-align: center;
+    color: var(--color-white);
+    transition: .5s ease;
+}
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+    transition: .5s ease;
+}
+/*
+PIE DE PAGINA AJUSTABLE
+*/
+@media screen and (max-width: 768px) {
+    .pie-pagina .grupo1 {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 50px;
+        padding: 35px 0;
+        transition: .5s ease;
+    }
+}

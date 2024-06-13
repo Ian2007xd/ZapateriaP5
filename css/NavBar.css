@@ -1,0 +1,406 @@
+/*EXTRAS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    ---color-gris: #18191A;
+    --color-transparen: transparent;
+    --color-body: #fff;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-blue: #29caf8;
+    --color-text: #000;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-body);
+    font-family: "PT sans", sans-serif;
+    background-size: cover;
+    background-position: center;
+    /*background: linear-gradient(#0df8f9, #000);*/
+}
+body.dark {
+    ---color-gris: #18191A;
+    --color-transparen: #18191A;
+    --color-body: #000;
+    --color-white: #CCC;
+    --color-black: #18191A;
+    --color-blue: #29caf8;
+    --color-text: #ccc;
+}
+
+/*--------------------
+MENU
+--------------------*/
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background-color: var(--color-black);
+    z-index: 100;
+    transition: .5s ease;
+}
+.nav.activeMenu {
+    background-color: var(--color-black);
+    padding: 1px;
+    z-index: 100;
+    transition: .5s ease;
+}
+.nav.activeMenu .logo,
+.nav.activeMenu a {
+    color: var(--color-white);
+    transition: .5s ease;
+}
+.nav.activeMenu a:hover {
+    color: var(--color-blue);
+    transition: .5s ease;
+}
+.scrol {
+    height: auto;
+}
+.nav .nav-bar {
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--color-black);
+    backdrop-filter: blur(20px);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .5s ease;
+}
+.nav .nav-bar .slideropen {
+    color: var(--color-white);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+    transition: .5s ease;
+}
+.nav .nav-bar .logo a {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: .5s ease;
+}
+.menu .logo-toggle {
+    display: none;
+}
+.nav-bar .nav-links{
+    display: flex;
+    align-items: center;
+}
+.nav-bar .nav-links li {
+    margin: 0 5px;
+    list-style: none;
+}
+.nav-links li a {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 10px;
+    transition: .5s ease;
+}
+.nav-links li a:hover {
+    color: var(--color-blue);
+    transition: .5s ease;
+}
+.nav-links li a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    background-color: var(--color-blue);
+    opacity: 0;
+    transition: .5s ease;
+}
+.nav-links li:hover a::before {
+    opacity: 1;
+}
+.nav-bar .darklight-searchBox {
+    display: flex;
+    align-items: center;
+}
+.darklight-searchBox .darlight,
+.darklight-searchBox .searchToggle {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+.darlight i,
+.searchToggle i {
+    position: absolute;
+    color: var(--color-white);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transition: .5s ease;
+}
+.darlight i.sun {
+    opacity: 0;
+    pointer-events: none;
+}
+.darlight.activeLight i.sun {
+    opacity: 1;
+    pointer-events: auto;
+}
+.darlight.activeLight i.moon {
+    opacity: 0;
+    pointer-events: none;
+}
+.searchToggle i.cancel {
+    opacity: 0;
+    pointer-events: none;
+}
+.searchToggle.activeBar i.cancel {
+    opacity: 1;
+    pointer-events: auto;
+}
+.searchToggle.activeBar i.search {
+    opacity: 0;
+    pointer-events: none;
+}
+/*
+PERFIL DE USUARIO
+*/
+.nav-bar .perfil {
+    display: flex;
+    align-items: center;
+}
+.perfil .file {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+.file a {
+    position: absolute;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: .5s ease;
+}
+.perfil .file {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.perfil .file img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.perfil .options {
+    position: fixed;
+    top: 100px;
+    right: 20;
+    padding: 10px 20px;
+    background-color: var(--color-black);
+    width: 200px;
+    box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transition: .5s;
+    opacity: 0;
+    z-index: 100;
+    visibility: hidden;
+    transition: .5s ease;
+}
+.perfil .options.activePerfil {
+    top: 65px;
+    visibility: visible;
+    opacity: 1;
+}
+.perfil .options::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 28px;
+    width: 20px;
+    height: 20px;
+    background: var(--color-black);
+    transform: rotate(45deg);
+    transition: .5s ease;
+}
+.perfil .options h3 {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--color-white);
+    line-height: 1.2em;
+    transition: .5s ease;
+}
+.perfil .options h3 span {
+    font-size: 14px;
+    color: var(--color-blue);
+    font-weight: 400;
+    transition: .5s ease;
+}
+.perfil .options ul li {
+    list-style: none;
+    color: var(--color-white);
+    padding: 10px 0;
+    border-top: 1px solid var(--color-white);
+    display: flex;
+    align-items: center;
+    transition: .5s ease;
+}
+.perfil .options ul li i {
+    opacity: .5;
+    transition: .5 ease;
+    max-width: 20px;
+    margin-right: 10px;
+}
+.perfil .options ul li:hover i {
+    opacity: 1;
+    transition: .5 ease;
+}
+.perfil .options ul li a {
+    opacity: .5;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-white);
+    font-weight: 500;
+    transition: .5 ease;
+}
+.perfil .options ul li:hover a {
+    opacity: 1;
+    transition: .5 ease;
+}
+
+
+/*
+BUCADOR
+*/
+.searchBox {
+    position: relative;
+}
+.searchBox .bar-menu {
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-blue);
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.searchToggle.activeBar ~ .bar-menu {
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.bar-menu::before {
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: var(--color-blue);
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+.bar-menu input {
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+body.dark .bar-menu input {
+    color: var(--color-text);
+}
+.bar-menu i {
+    position: absolute;
+    color: var(--color-white);
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+body.dark .bar-menu i {
+    color: var(--color-text);
+}
+/*
+MENU AJUSTABLE
+*/
+@media (max-width: 768px) {
+    .nav .nav-bar .slideropen {
+        display: block;
+        z-index: 100;
+    }
+    .menu {
+        position: fixed;
+        height: 100%;
+        width: 250px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--color-black);
+        z-index: 100;
+        transition: all 0.5s ease;
+    }
+    .nav.active .menu {
+        left: -0%;
+    }
+    .nav.active .nav-bar .navLogo a {
+        opacity: 1;
+        transition: all 0.3s ease;
+    }
+    .menu .logo-toggle {
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo-toggle .sliderclose {
+        color: var(--color-white);
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .nav-bar .nav-links {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+    .nav-links li a {
+        display: block;
+        margin-top: 20px;
+    }
+}

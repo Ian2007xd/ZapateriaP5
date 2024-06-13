@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PT sans", sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-family: "PT sans", sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-image: url("fondo-index.jpg");
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    }
+/*PAGINA DE INICIO*/
+.inico {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px) #000;
+    box-shadow: 0 0 10px rgba(102, 238, 245, .2);
+    color: #fff;
+    padding: 100px 100px;
+    align-items: center;
+    justify-content: center;
+} 
+.inico h1 {
+    font-size: 36px;
+    text-align: center;
+    margin: 20px auto 20px;
+}
+.inico h4 {
+    font-size: 25px;
+    text-align: center;
+    margin: 20px auto 20px;
+}
+
+/*BOTON HACIA LOGIN*/
+.boton-login {
+    display: flex;
+}
+.btn-login {
+overflow: hidden;
+position: fixed;
+left: 31%;
+top: 45%;
+text-decoration: none;
+color: black;
+padding: 15px 50px;
+border-radius: 30px;
+box-shadow:
+0 0 0 0 rgba(143, 64, 248, 0.5),
+0 0 0 0 rgba(39, 200, 255, 0.5);
+transition: 
+transform 0.3s ease,
+box-shadow 0.3s ease;
+}
+.btn-login::after {
+    content: "";
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: -100px;
+    top: -50px;
+    background-color: #ff3cac;
+    background-image: linear-gradient(225deg,
+    #27d86c 0%,
+    #26caf8 50%,
+    #c625d0 100%);
+    z-index: -100;
+    transition: transform 0.5s ease;
+}
+.btn-login:hover {
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(143, 64, 248, 0.5),
+    -10px 10px 25px 0 rgba(39, 200, 255, 0.5);
+}
+.btn-login:hover::after {
+    transform: rotate(150deg);
+}
+
+/*BOTON HACIA REGISTRO*/
+.boton-registro {
+    display: flex;
+}
+.btn-registro {
+overflow: hidden;
+position: fixed;
+left: 51%;
+top: 45%;
+text-decoration: none;
+color: black;
+padding: 15px 50px;
+border-radius: 30px;
+box-shadow:
+0 0 0 0 rgba(143, 64, 248, 0.5),
+0 0 0 0 rgba(39, 200, 255, 0.5);
+transition: 
+transform 0.3s ease,
+box-shadow 0.3s ease;
+}
+.btn-registro::after {
+    content: "";
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: -100px;
+    top: -50px;
+    background-color: #ff3cac;
+    background-image: linear-gradient(225deg,
+    #27d86c 0%,
+    #26caf8 50%,
+    #c625d0 100%);
+    z-index: -100;
+    transition: transform 0.5s ease;
+}
+.btn-registro:hover {
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(143, 64, 248, 0.5),
+    -10px 10px 25px 0 rgba(39, 200, 255, 0.5);
+}
+.btn-registro:hover::after {
+    transform: rotate(150deg);
+}

@@ -1,0 +1,178 @@
+/*
+EXTRAS
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PT sans", sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    /*linear-gradient(#fff, #000);*/
+    background-size: cover;
+    background-position: center;
+}
+
+/*
+FONDO
+*/
+.fondo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.burbujas {
+    position: relative;
+    display: flex;
+}
+.burbujas span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #ff0000;
+    margin: 0 4px;
+    border-radius: 50px;
+    box-shadow: 0 0 0 10px #ab0d2f,
+    0 0 50px #ff0000,
+    0 0 100px #ff0000;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+.burbujas span:nth-child(even){
+    background: #142157;
+    box-shadow: 0 0 0 10px #0cbccc,
+    0 0 50px #142157,
+    0 0 100px #142157;
+}
+@keyframes animate {
+    0%  {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+} 
+
+/*
+REGISTRO
+*/
+.login {
+    width: 1000px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+.login h1 {
+    font-size: 36px;
+    text-align: center;
+}
+.login .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+.login .datos {
+    display: flex;
+    justify-content: space-between;
+    font-size: 36px;
+    margin: -20px 0 20px;
+}
+.login .nombreC {
+    display: flex;
+    justify-content: space-between;
+    font-size: 36px;
+    margin: -20px 0 20px;
+}
+.login .passwords {
+    display: flex;
+    justify-content: space-between;
+    font-size: 36px;
+    margin: -20px 0 20px;
+}
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    opacity: .5;
+}
+.input-box input:hover {
+    transition: all .5s ease;
+    opacity: 1;
+}
+.input-box input::placeholder {
+    color: #fff;
+}
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    opacity: .5;
+    transition: all 1s ease;
+}
+.input-box:hover i {
+    transition: all .5s ease;
+    opacity: 1;
+}
+.login .contra {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -20px 0 20px;
+}
+.contra label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+.contra a {
+    color: #fff;
+    text-decoration: none;
+}
+.contra a:hover {
+    text-decoration: underline;
+}
+.login .btn-login {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+.login .registro {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+.registro p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.registro p a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,194 @@
+/*EXTRAS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    ---color-gris: #18191A;
+    --color-transparen: transparent;
+    --color-body: #fff;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-blue: #29caf8;
+    --color-text: #000;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-body);
+    font-family: "PT sans", sans-serif;
+    background-size: cover;
+    background-position: center;
+    transition: .5s ease;
+    /*background: linear-gradient(#0df8f9, #000);*/
+}
+body.dark {
+    ---color-gris: #18191A;
+    --color-transparen: #18191A;
+    --color-body: #000;
+    --color-white: #CCC;
+    --color-black: #18191A;
+    --color-blue: #29caf8;
+    --color-text: #ccc;
+    transition: .5s ease;
+}
+
+/*
+IMAGEN 1
+*/
+.img1 img{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    margin: 50px 0;
+}
+.img1 .text1 {
+    position: absolute;
+    top: 40%;
+    width: 1100px;
+    max-width: 100%;
+    left: 45%;
+    transform: translateX(-50%);
+    padding-right: 50px;
+    box-sizing: border-box;
+    color: var(--color-white);
+    text-shadow: 0 5px 10px #18191A;
+    font-weight: bold;
+    font-size: 2em;
+    transition: .5s ease;
+}
+
+/*
+INFORMACION
+*/
+.wpapper {
+    margin: 50px auto;
+    width: 80%;
+
+}
+.wpapper img {
+    width: 200px;
+    height: 200px;
+    float: left;
+    border: 3px solid var(--color-text);
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+    transition: .5s ease;
+}
+.wpapper .text-box {
+    color: var(--color-text);
+    transition: .5s ease;
+}
+.wpappwe.text-box h2 {
+    font-size: 46px;
+    color: var(--clr);
+}
+.wpapper .text-box p {
+    font-size: 18px;
+}
+.wpapper .btn-mas button {
+    margin: 10px auto;
+    width: 150px;
+    height: 30px;
+    border: none;
+    background-color: var(--color-white);
+    letter-spacing: 1px;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid var(--color-black);
+    transition: .5s ease;
+}
+.wpapper .btn-mas button:hover {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    border: 1px solid var(--color-black);
+    transition: .5s ease;
+}
+
+/*
+PIE DE PAGINA
+*/
+.pie-pagina {
+    width: 100%;
+    background-color: var(--color-black);
+    transition: .5s ease;
+}
+.pie-pagina .grupo1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0;
+}
+.pie-pagina .grupo1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo1 .box figure img {
+    width: 100px;
+    border: 3px solid var(--color-white);
+    border-radius: 50%;
+    transition: .5s ease;
+}
+.pie-pagina .grupo1 .box h2 {
+    color: var(--color-white);
+    margin-bottom: 25px;
+    font-size: 20px;
+    transition: .5s ease;
+}
+.pie-pagina .grupo1 .box p {
+    color: var(--color-white);
+    margin-bottom: 10px;
+    transition: .5s ease;
+}
+.pie-pagina .grupo1 .box .red-social a {
+    text-decoration: none;
+}
+.pie-pagina .grupo1 .box .red-social i {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: var(--color-black);
+    margin-right: 10px;
+    background-color: var(--color-white);
+    text-align: center;
+    transition: .5s ease;
+}
+.pie-pagina .grupo1 .box .red-social i:hover {
+    background-color: var(--color-blue);
+    transition: .5s ease;
+}
+.pie-pagina .grupo-2 {
+    background-color: var(---color-gris);
+    padding: 15px 10px;
+    text-align: center;
+    color: var(--color-white);
+    transition: .5s ease;
+}
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+    transition: .5s ease;
+}
+/*
+PIE DE PAGINA AJUSTABLE
+*/
+@media screen and (max-width: 768px) {
+    .pie-pagina .grupo1 {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 50px;
+        padding: 35px 0;
+        transition: .5s ease;
+    }
+}
